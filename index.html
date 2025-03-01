@@ -10,7 +10,7 @@
   <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
   <meta property="og:url" content="URL OF THE WEBSITE" />
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image" content="static/images/Teaser-V.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
   <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:image" content="static/images/Teaser-V.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <!-- Keywords for your paper to be indexed by-->
   <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
@@ -30,8 +30,6 @@
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
@@ -39,8 +37,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
 </head>
 
@@ -128,29 +124,27 @@
   </section>
 
 
-  <!-- Teaser video-->
+  <!-- Teaser image-->
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <video poster="" id="tree" autoplay controls muted loop height="100%">
-          <!-- Your video here -->
-          <source src="static/videos/banner_video.mp4" type="video/mp4">
-        </video>
-        <h2 class="subtitle has-text-centered">
-          Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat
-          pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus.
-        </h2>
+        <img src="static/images/Teaser-V.jpg" alt="AppAgentX Teaser" width="100%">
+        <p style="margin-top: 1rem; font-size: 1em; line-height: 1.5; color: #4a4a4a; font-weight: 400; text-align: left;">
+          Illustration of the proposed evolutionary mechanism in GUI agents. The agent evolves a high-level
+action, "Search", which replaces a sequence of inefficient low-level actions. This evolution eliminates the need for
+step-by-step reasoning, significantly enhancing the agent's efficiency.
+        </p>
       </div>
     </div>
   </section>
-  <!-- End teaser video -->
+  <!-- End teaser image -->
 
   <!-- Paper abstract -->
   <section class="section hero is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
+          <h2 class="title is-3" style="text-align: center; font-size: 2.5rem;">Abstract</h2>
           <div class="content has-text-justified">
             <p>
               Recent advancements in Large Language Models (LLMs) have led to the development of intelligent LLM-based
@@ -180,13 +174,63 @@
   <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
-        <h2 class="title is-3">Method</h2>
+        <h2 class="title is-3" style="text-align: center; font-size: 2.5rem;">Method</h2>
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
             <div class="content has-text-justified">
               <p>
                 <!-- Method content will be placed here -->
               </p>
+              
+              <img src="static/images/framework.jpg" alt="AppAgentX Framework" width="100%">
+              <p style="margin-top: 1rem; font-size: 1em; line-height: 1.5; color: #4a4a4a; font-weight: 400; text-align: left;">
+                Overview of the proposed framework. (a) The trajectory of a task execution is decomposed into multiple
+overlapping triples. Based on these triples, the LLM generates functional descriptions of both pages and UI elements.
+Descriptions of pages that are repeatedly generated are then merged. The entire interaction history is recorded using
+a chain of nodes. (b) The proposed evolutionary mechanism and execution process. The evolutionary mechanism
+generates shortcut nodes, which allow the agent to execute a series of actions efficiently without reasoning step by
+step. (c) An example of the content of nodes within the chain. Each node records essential information, including
+descriptions of pages, UI elements, and high-level actions, to facilitate understanding of the agent's interactions.
+              </p>
+              
+
+            <!-- <p style="margin-top: 1rem; font-size: 1em; line-height: 1.5; color: #4a4a4a; font-weight: 400; text-align: left;"></p>
+                ...................
+                ...................
+                ...................
+            </p> -->
+
+              <h3 class="subtitle has-text-centered" style="margin: 3rem 0 1.5rem; color: #363636; font-weight: 600;">Key Components of AppAgentX</h3>
+              
+              <div class="columns is-centered" style="margin-top: 1.5rem;">
+                <div class="column is-half">
+                  <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); background-color: white; height: 100%; display: flex; flex-direction: column;">
+                    <div style="padding: 1rem; background-color: #f8f9fa; border-bottom: 1px solid #eaeaea;">
+                      <h4 style="margin: 0; color: #333; font-weight: 600; text-align: center;">LLM-based GUI Agent Baseline</h4>
+                    </div>
+                    <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+                      <img src="static/images/Omni-V.jpg" alt="Omni-V Visualization" width="100%" style="border-radius: 4px;" />
+                      <p style="margin-top: 1.5rem; font-size: 0.95em; line-height: 1.5; color: #4a4a4a; text-align: left;">
+                        At each step, the agent captures the current screen of the device and analyzes the interface to select an appropriate action from the predefined action space. The chosen action is then executed to interact with the GUI.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="column is-half">
+                  <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); background-color: white; height: 100%; display: flex; flex-direction: column;">
+                    <div style="padding: 1rem; background-color: #f8f9fa; border-bottom: 1px solid #eaeaea;">
+                      <h4 style="margin: 0; color: #333; font-weight: 600; text-align: center;">Overall Execution Process</h4>
+                    </div>
+                    <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+                      <img src="static/images/Flow-V.jpg" alt="Flow-V Visualization" width="100%" style="border-radius: 4px;" />
+                      <p style="margin-top: 1.5rem; font-size: 0.95em; line-height: 1.5; color: #4a4a4a; text-align: left;">
+                        This flowchart illustrates the process from the input of the task to the final execution result after adding the shortcut route, enabling more efficient task completion.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -199,13 +243,178 @@
   <section class="hero is-small is-light">
     <div class="hero-body">
       <div class="container">
-        <h2 class="title is-3">Results</h2>
+        <h2 class="title is-3" style="text-align: center; font-size: 2.5rem;">Results</h2>
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
             <div class="content has-text-justified">
               <p>
                 <!-- Results content will be placed here -->
               </p>
+              
+
+              <p style="margin-top: 0.5rem; font-size: 0.95em; line-height: 1.5; color: #4a4a4a; font-weight: 400; text-align: left;">
+                <strong>Metrics explanation:</strong><br>
+                • <strong>Steps↓</strong>: The average number of actions required to complete a task. Lower values indicate higher efficiency.<br>
+                • <strong>Step Time (s)↓</strong>: The average time taken for each action (step) during task execution. Lower values indicate faster steps.<br>
+                • <strong>Tokens (k)↓</strong>: The total number of tokens used by the language model during task execution. Fewer tokens indicate better resource efficiency.<br>
+                • <strong>SR (Success Rate)↑</strong>: The percentage of tasks successfully completed. Higher values indicate better performance.<br>
+                • <strong>Task Time↓</strong>: The total time taken to complete a task. Lower values mean faster task completion.
+              </p>
+
+              <div style="overflow-x: auto; margin: 2rem 0;">
+                <table class="table is-bordered is-fullwidth" style="background-color: white;">
+                  <thead>
+                    <tr>
+                      <th style="text-align: center;">Method</th>
+                      <th style="text-align: center;">Memory Type</th>
+                      <th style="text-align: center;">Action Space</th>
+                      <th style="text-align: center;">Steps↓</th>
+                      <th style="text-align: center;">Step Time (s)↓</th>
+                      <th style="text-align: center;">Tokens (k)↓</th>
+                      <th style="text-align: center;">SR ↑</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td rowspan="2" style="text-align: center; vertical-align: middle;">GPT-4o (Baseline)</td>
+                      <td style="text-align: center;">None</td>
+                      <td style="text-align: center;">Basic</td>
+                      <td style="text-align: center;">10.8</td>
+                      <td style="text-align: center;">26</td>
+                      <td style="text-align: center;">6.72</td>
+                      <td style="text-align: center;">16.9%</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center;">Element</td>
+                      <td style="text-align: center;">Basic</td>
+                      <td style="text-align: center;">9.3</td>
+                      <td style="text-align: center;">24</td>
+                      <td style="text-align: center;">8.46</td>
+                      <td style="text-align: center;">69.7%</td>
+                    </tr>
+                    <tr>
+                      <td rowspan="2" style="text-align: center; vertical-align: middle;">AppAgentX</td>
+                      <td style="text-align: center;">Chain</td>
+                      <td style="text-align: center;">Basic</td>
+                      <td style="text-align: center;">9.1</td>
+                      <td style="text-align: center;">23</td>
+                      <td style="text-align: center;">9.26</td>
+                      <td style="text-align: center;">70.8%</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center;">Chain</td>
+                      <td style="text-align: center;">Basic+Evolve</td>
+                      <td style="text-align: center;"><strong>5.7</strong></td>
+                      <td style="text-align: center;"><strong>16</strong></td>
+                      <td style="text-align: center;"><strong>4.94</strong></td>
+                      <td style="text-align: center;"><strong>71.4%</strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              <p style="margin-top: 1rem; font-size: 1em; line-height: 1.5; color: #4a4a4a; font-weight: 400; text-align: left;">
+                <strong>Table 1: Analysis of Different Components in AppAgentX.</strong> This table compares the performance differences
+resulting from the different designs with the baseline. Both our memory design and evolution mechanism can
+improve success rate and efficiency.
+              </p>
+              
+             
+
+              <div style="overflow-x: auto; margin: 2rem 0;">
+                <table class="table is-bordered is-fullwidth" style="background-color: white;">
+                  <thead>
+                    <tr>
+                      <th style="text-align: center;">Benchmarks</th>
+                      <th style="text-align: center;">Task Num.</th>
+                      <th style="text-align: center;">Framework</th>
+                      <th style="text-align: center;">Task Time↓</th>
+                      <th style="text-align: center;">Tokens (k)↓</th>
+                      <th style="text-align: center;">SR↑</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td rowspan="2" style="text-align: center; vertical-align: middle;">DroidTask</td>
+                      <td rowspan="2" style="text-align: center; vertical-align: middle;">158</td>
+                      <td style="text-align: center;">AppAgent</td>
+                      <td style="text-align: center;">106.24</td>
+                      <td style="text-align: center;">11.5</td>
+                      <td style="text-align: center;">46.3%</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center;"><strong>AppAgentX</strong></td>
+                      <td style="text-align: center;"><strong>56.29</strong></td>
+                      <td style="text-align: center;"><strong>5.1</strong></td>
+                      <td style="text-align: center;"><strong>88.2%</strong></td>
+                    </tr>
+                    <tr>
+                      <td rowspan="2" style="text-align: center; vertical-align: middle;">MobileBench (SAST)</td>
+                      <td rowspan="2" style="text-align: center; vertical-align: middle;">332</td>
+                      <td style="text-align: center;">AppAgent</td>
+                      <td style="text-align: center;">150.24</td>
+                      <td style="text-align: center;">7.6</td>
+                      <td style="text-align: center;">72.6%</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center;"><strong>AppAgentX</strong></td>
+                      <td style="text-align: center;"><strong>42.38</strong></td>
+                      <td style="text-align: center;"><strong>5.4</strong></td>
+                      <td style="text-align: center;"><strong>86.1%</strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              <p style="margin-top: 1rem; font-size: 1em; line-height: 1.5; color: #4a4a4a; font-weight: 400; text-align: left;">
+                <strong>Table 2: Comparison with AppAgent on Large Benchmarks.</strong> This table evaluates the efficiency and accuracy of different frameworks on benchmarks containing a large number of tasks. In the MobileBench, SAST (Single-App-Single-Task) refers to a real dataset containing only a single task description.
+              </p>
+              
+
+
+              <div style="overflow-x: auto; margin: 2rem 0;">
+                <table class="table is-bordered is-fullwidth" style="background-color: white;">
+                  <thead>
+                    <tr>
+                      <th style="text-align: center;">LLM</th>
+                      <th style="text-align: center;">Mobile-Agent-v2</th>
+                      <th style="text-align: center;">AppAgentX</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="text-align: center;">Gemini-1.5-Pro</td>
+                      <td style="text-align: center;">25.6</td>
+                      <td style="text-align: center;"><strong>12.4</strong></td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center;">Claude-3.5</td>
+                      <td style="text-align: center;">38.4</td>
+                      <td style="text-align: center;"><strong>11.4</strong></td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center;">GPT-4o</td>
+                      <td style="text-align: center;">43.5</td>
+                      <td style="text-align: center;"><strong>17.5</strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              <p style="margin-top: 1rem; font-size: 1em; line-height: 1.5; color: #4a4a4a; font-weight: 400; text-align: left;">
+                <strong>Table 3: Comparison of Average Execution Time per Step.</strong> This table presents the average execution time
+(seconds ↓) across different LLMs and frameworks.
+              </p>
+              
+
+
+              <p style="margin-top: 1rem; font-size: 1em; line-height: 1.5; color: #4a4a4a; font-weight: 400; text-align: left;">
+                We propose an evolving GUI agent framework that enhances efficiency and intelligence by abstracting high-level actions 
+                  from execution history. Unlike rule-based automation, our approach generalizes task execution by compressing repetitive operations,
+                   balancing intelligent reasoning with efficient execution. A chain-based knowledge framework enables continuous behavior refinement,
+                    improving adaptability and reducing redundancy. Exper- iments show our framework outperforms existing methods in accuracy and efficiency. 
+              </p>
+              
             </div>
           </div>
         </div>
@@ -214,132 +423,31 @@
   </section>
   <!-- End Results section -->
 
-  <!-- Image carousel -->
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="container">
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item">
-            <!-- Your image here -->
-            <img src="static/images/carousel1.jpg" alt="MY ALT TEXT" />
-            <h2 class="subtitle has-text-centered">
-              First image description.
-            </h2>
-          </div>
-          <div class="item">
-            <!-- Your image here -->
-            <img src="static/images/carousel2.jpg" alt="MY ALT TEXT" />
-            <h2 class="subtitle has-text-centered">
-              Second image description.
-            </h2>
-          </div>
-          <div class="item">
-            <!-- Your image here -->
-            <img src="static/images/carousel3.jpg" alt="MY ALT TEXT" />
-            <h2 class="subtitle has-text-centered">
-              Third image description.
-            </h2>
-          </div>
-          <div class="item">
-            <!-- Your image here -->
-            <img src="static/images/carousel4.jpg" alt="MY ALT TEXT" />
-            <h2 class="subtitle has-text-centered">
-              Fourth image description.
-            </h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End image carousel -->
-
-
-
-
-  <!-- Youtube video -->
-  <section class="hero is-small is-light">
-    <div class="hero-body">
-      <div class="container">
-        <!-- Paper video. -->
-        <h2 class="title is-3">Video Presentation</h2>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-
-            <div class="publication-video">
-              <!-- Youtube embed code here -->
-              <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media"
-                allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End youtube video -->
-
-
-  <!-- Video carousel -->
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="container">
-        <h2 class="title is-3">Another Carousel</h2>
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item item-video1">
-            <video poster="" id="video1" autoplay controls muted loop height="100%">
-              <!-- Your video file here -->
-              <source src="static/videos/carousel1.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-video2">
-            <video poster="" id="video2" autoplay controls muted loop height="100%">
-              <!-- Your video file here -->
-              <source src="static/videos/carousel2.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-video3">
-            <video poster="" id="video3" autoplay controls muted loop height="100%">\
-              <!-- Your video file here -->
-              <source src="static/videos/carousel3.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End video carousel -->
-
-
-  <!-- Paper poster -->
-  <section class="hero is-small is-light">
-    <div class="hero-body">
-      <div class="container">
-        <h2 class="title">Poster</h2>
-
-        <!-- PDF poster has been removed to prevent automatic downloads -->
-        <p class="has-text-centered">Poster PDF is available upon request.</p>
-
-      </div>
-    </div>
-  </section>
-  <!--End paper poster -->
-
-
   <!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+  <section class="section" id="BibTeX" style="background-color: white;">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <div class="content">
+            <h2 class="title" style="font-size: 1.75em; margin-bottom: 0.5714em; text-align: left;">BibTeX</h2>
+            <pre style="background-color: #f5f5f5; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); font-family: monospace; line-height: 1.5;">@article{jiang2024appagentx,
+  title={AppAgentX: Evolving GUI Agents as Proficient Smartphone Users},
+  author={Jiang, Wenjia and Zhuang, Yangyang and Song, Chenxi and Zhang, Chi and Yang, Xu},
+  journal={arXiv preprint},
+  year={2024}
+}</pre>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   <!--End BibTex citation -->
-
 
   <footer class="footer">
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-8">
           <div class="content">
-
             <p>
               This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
                 target="_blank">Academic Project Page Template</a> which was adopted from the <a
@@ -349,7 +457,6 @@
                 href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
                 Commons Attribution-ShareAlike 4.0 International License</a>.
             </p>
-
           </div>
         </div>
       </div>
