@@ -6,8 +6,8 @@
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
   <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+  <meta property="og:title" content="AppAgentX: Evolving GUI Agents as Proficient Smartphone Users" />
+  <meta property="og:description" content="AppAgentX: Evolving GUI Agents as Proficient Smartphone Users" />
   <meta property="og:url" content="URL OF THE WEBSITE" />
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
   <meta property="og:image" content="static/images/Teaser-V.jpg" />
@@ -52,15 +52,15 @@
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="#" target="_blank">Wenjia Jiang</a><sup>1,2</sup>,</span>
+                <a href="https://github.com/jwj1342" target="_blank">Wenjia Jiang</a><sup>1,2</sup>,</span>
               <span class="author-block">
-                <a href="#" target="_blank">Yangyang Zhuang</a><sup>1</sup>,</span>
+                <a href="https://github.com/yyzhuang294" target="_blank">Yangyang Zhuang</a><sup>1</sup>,</span>
               <span class="author-block">
-                <a href="#" target="_blank">Chenxi Song</a><sup>1</sup>,</span>
+                <a href="https://github.com/cx-song" target="_blank">Chenxi Song</a><sup>1</sup>,</span>
               <span class="author-block">
-                <a href="#" target="_blank">Chi Zhang</a><sup>1</sup>,</span>
+                <a href="https://yangxuntu.github.io/" target="_blank">Xu Yang</a><sup>3</sup>
               <span class="author-block">
-                <a href="#" target="_blank">Xu Yang</a><sup>3</sup>
+                <a href="https://icoz69.github.io/" target="_blank">Chi Zhang</a><sup>1</sup>,</span>
               </span>
             </div>
 
@@ -119,11 +119,11 @@
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <img src="static/images/Teaser-V.jpg" alt="AppAgentX Teaser" width="100%">
-        <p style="margin-top: 1rem; font-size: 1em; line-height: 1.5; color: #4a4a4a; font-weight: 400; text-align: left;">
-          Illustration of the proposed evolutionary mechanism in GUI agents. The agent evolves a high-level
-action, "Search", which replaces a sequence of inefficient low-level actions. This evolution eliminates the need for
-step-by-step reasoning, significantly enhancing the agent's efficiency.
+        <video width="100%" controls autoplay loop muted>
+          <source src="static/images/1.mp4" type="video/mp4">
+        </video>
+        <p style="margin-top: 1rem; font-size: 1em; line-height: 1.5; color: #4a4a4a; font-weight: 400; text-align: center;">
+          <strong>App Agent X</strong> efficiently executes tasks by combining multiple steps into a single chain.
         </p>
       </div>
     </div>
@@ -173,25 +173,7 @@ step-by-step reasoning, significantly enhancing the agent's efficiency.
                 <!-- Method content will be placed here -->
               </p>
               
-              <img src="static/images/framework.jpg" alt="AppAgentX Framework" width="100%">
-              <p style="margin-top: 1rem; font-size: 1em; line-height: 1.5; color: #4a4a4a; font-weight: 400; text-align: left;">
-                Overview of the proposed framework. (a) The trajectory of a task execution is decomposed into multiple
-overlapping triples. Based on these triples, the LLM generates functional descriptions of both pages and UI elements.
-Descriptions of pages that are repeatedly generated are then merged. The entire interaction history is recorded using
-a chain of nodes. (b) The proposed evolutionary mechanism and execution process. The evolutionary mechanism
-generates shortcut nodes, which allow the agent to execute a series of actions efficiently without reasoning step by
-step. (c) An example of the content of nodes within the chain. Each node records essential information, including
-descriptions of pages, UI elements, and high-level actions, to facilitate understanding of the agent's interactions.
-              </p>
-              
-
-            <!-- <p style="margin-top: 1rem; font-size: 1em; line-height: 1.5; color: #4a4a4a; font-weight: 400; text-align: left;"></p>
-                ...................
-                ...................
-                ...................
-            </p> -->
-
-              <h3 class="subtitle has-text-centered" style="margin: 3rem 0 1.5rem; color: #363636; font-weight: 600;">Key Components of AppAgentX</h3>
+              <!-- <h3 class="subtitle has-text-centered" style="margin: 3rem 0 1.5rem; color: #363636; font-weight: 600;">Key Components of AppAgentX</h3> -->
               
               <div class="columns is-centered" style="margin-top: 1.5rem;">
                 <div class="column is-half">
@@ -211,12 +193,43 @@ descriptions of pages, UI elements, and high-level actions, to facilitate unders
                 <div class="column is-half">
                   <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); background-color: white; height: 100%; display: flex; flex-direction: column;">
                     <div style="padding: 1rem; background-color: #f8f9fa; border-bottom: 1px solid #eaeaea;">
-                      <h4 style="margin: 0; color: #333; font-weight: 600; text-align: center;">Overall Execution Process</h4>
+                      <h4 style="margin: 0; color: #333; font-weight: 600; text-align: center;">Merging of Triples</h4>
                     </div>
                     <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
-                      <img src="static/images/Flow-V.jpg" alt="Flow-V Visualization" width="100%" style="border-radius: 4px;" />
+                      <img src="static/images/PEP-V.jpg" alt="Memory Visualization" width="100%" style="border-radius: 4px;" />
                       <p style="margin-top: 1.5rem; font-size: 0.95em; line-height: 1.5; color: #4a4a4a; text-align: left;">
-                        This flowchart illustrates the process from the input of the task to the final execution result after adding the shortcut route, enabling more efficient task completion.
+                        The trajectory of a task execution is decomposed into multiple overlapping triples. Based on these triples, the LLM generates functional descriptions of both pages and UI elements.
+                        The descriptions of pages that are repeatedly generated are then merged. The entire interaction history is recorded using a chain of nodes.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="columns is-centered" style="margin-top: 1.5rem;">
+                <div class="column is-half">
+                  <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); background-color: white; height: 100%; display: flex; flex-direction: column;">
+                    <div style="padding: 1rem; background-color: #f8f9fa; border-bottom: 1px solid #eaeaea;">
+                      <h4 style="margin: 0; color: #333; font-weight: 600; text-align: center;">Evolution Mechanism</h4>
+                    </div>
+                    <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+                      <img src="static/images/b.jpg" alt="Evolution Visualization" width="100%" style="border-radius: 4px;" />
+                      <p style="margin-top: 1.5rem; font-size: 0.95em; line-height: 1.5; color: #4a4a4a; text-align: left;">
+                        The evolution mechanism identifies repetitive action sequences and creates high-level shortcuts, significantly reducing the number of steps and reasoning required for common tasks.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="column is-half">
+                  <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); background-color: white; height: 100%; display: flex; flex-direction: column;">
+                    <div style="padding: 1rem; background-color: #f8f9fa; border-bottom: 1px solid #eaeaea;">
+                      <h4 style="margin: 0; color: #333; font-weight: 600; text-align: center;">Content Details</h4>
+                    </div>
+                    <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+                      <img src="static/images/Evolution.jpg" alt="Performance Visualization" width="100%" style="border-radius: 4px;" />
+                      <p style="margin-top: 1.5rem; font-size: 0.95em; line-height: 1.5; color: #4a4a4a; text-align: left;">
+                        Comparative analysis shows that AppAgentX significantly outperforms existing methods in both efficiency and success rate across multiple benchmark tasks.
                       </p>
                     </div>
                   </div>
