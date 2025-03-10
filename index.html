@@ -34,6 +34,37 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
+  <!-- 添加自定义样式 -->
+  <style>
+    /* 确保视频容器样式一致 */
+    #teaser-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background-color: #000;
+      transition: none;
+      /* 防止过渡动画导致的尺寸变化 */
+    }
+
+    /* 移除加载指示器样式 
+    .video-container.loading::after {
+      content: "加载中...";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 5px;
+      z-index: 10;
+    }
+    */
+  </style>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
@@ -130,21 +161,22 @@
   <section class="hero teaser">
     <div class="container">
       <div class="hero-body">
-        <!-- 语言切换按钮 - 现在位于视频上方 -->
-        <div style="text-align: right; margin-bottom: 0.75rem;">
+        <div class="video-container"
+          style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.15); margin: 0 auto;">
+          <video id="teaser-video"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background-color: #000;"
+            src="static\images\AppAgentX.mp4" title="AppAgentX: Evolving GUI Agents as Proficient Smartphone Users"
+            autoplay muted loop playsinline controls preload="auto"></video>
+        </div>
+
+        <!-- 将语言切换按钮移到这里，在介绍文字上方 -->
+        <div style="text-align: center; margin-top: 1rem;">
           <button id="language-toggle" class="button is-small is-rounded is-dark"
             style="font-weight: bold; padding: 5px 15px;">
             切换为中文版
           </button>
         </div>
-        
-        <div
-          style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.15); margin: 0 auto;">
-          <video id="teaser-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background-color: #000;"
-            src="static\images\AppAgentX.mp4" title="AppAgentX: Evolving GUI Agents as Proficient Smartphone Users"
-            autoplay muted loop playsinline controls preload="auto"></video>
-        </div>
-        
+
         <p id="description-text"
           style="margin-top: 1rem; font-size: 1.2em; line-height: 1.6; color: #4a4a4a; font-weight: 400; text-align: center;">
           <strong>App Agent X</strong> efficiently executes tasks by combining multiple steps into a chain.
@@ -623,64 +655,115 @@
 
   <!-- 在</body>标签前添加切换语言的JavaScript -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const teaserVideo = document.getElementById('teaser-video');
+    document.addEventListener('DOMContentLoaded', function () {
+      let teaserVideo = document.getElementById('teaser-video');
       const languageToggle = document.getElementById('language-toggle');
       const descriptionText = document.getElementById('description-text');
-      
+      const videoContainer = teaserVideo.parentElement;
+
       // 设置视频源
       const englishVideoSrc = "static\\images\\AppAgentX.mp4";
       const chineseVideoSrc = "static\\images\\AppAgentX-C.mp4"; // 中文版视频
-      
-      // 预加载两个视频，确保尺寸一致 - 修复创建视频元素的错误
+
+      // 预加载两个视频，确保尺寸一致
       const preloadEnglish = document.createElement('video');
       preloadEnglish.src = englishVideoSrc;
       preloadEnglish.preload = "auto";
       preloadEnglish.style.display = "none";
-      
+      preloadEnglish.load(); // 强制立即加载
+
       const preloadChinese = document.createElement('video');
       preloadChinese.src = chineseVideoSrc;
       preloadChinese.preload = "auto";
       preloadChinese.style.display = "none";
-      
+      preloadChinese.load(); // 强制立即加载
+
       // 添加到DOM中以确保预加载
       document.body.appendChild(preloadEnglish);
       document.body.appendChild(preloadChinese);
-      
+
+      // 预加载完成标志
+      let englishLoaded = false;
+      let chineseLoaded = false;
+
+      // 监听预加载完成事件
+      preloadEnglish.addEventListener('canplaythrough', function () {
+        englishLoaded = true;
+        console.log('英文视频预加载完成');
+      });
+
+      preloadChinese.addEventListener('canplaythrough', function () {
+        chineseLoaded = true;
+        console.log('中文视频预加载完成');
+      });
+
       // 设置描述文本
       const englishDescription = "<strong>App Agent X</strong> efficiently executes tasks by combining multiple steps into a chain.";
       const chineseDescription = "<strong>App Agent X</strong> 高效执行任务，将多个步骤组合为连贯的操作链。";
-      
+
       // 当前语言状态
       let isEnglish = true;
-      
-      languageToggle.addEventListener('click', function() {
+
+      languageToggle.addEventListener('click', function () {
         // 暂时禁用按钮防止快速切换
         languageToggle.disabled = true;
-        
+
+        // 创建新的视频元素而不是更改src
+        const newVideo = document.createElement('video');
+        newVideo.id = 'teaser-video';
+        // 复制所有属性和样式
+        newVideo.style.cssText = teaserVideo.style.cssText;
+        newVideo.autoplay = true;
+        newVideo.muted = true;
+        newVideo.loop = true;
+        newVideo.playsinline = true;
+        newVideo.controls = true;
+
+        // 使用已预加载的视频源
         if (isEnglish) {
-          // 切换到中文版
-          teaserVideo.src = chineseVideoSrc;
+          // 使用预加载的中文视频
+          if (chineseLoaded) {
+            // 如果中文视频已加载完成，直接使用
+            newVideo.src = chineseVideoSrc;
+          } else {
+            // 如果中文视频尚未加载完成，克隆预加载的视频元素
+            newVideo.src = preloadChinese.src;
+          }
           languageToggle.textContent = "Switch to English";
-          descriptionText.innerHTML = chineseDescription;
         } else {
-          // 切换到英文版
-          teaserVideo.src = englishVideoSrc;
+          // 使用预加载的英文视频
+          if (englishLoaded) {
+            // 如果英文视频已加载完成，直接使用
+            newVideo.src = englishVideoSrc;
+          } else {
+            // 如果英文视频尚未加载完成，克隆预加载的视频元素
+            newVideo.src = preloadEnglish.src;
+          }
           languageToggle.textContent = "切换为中文版";
-          descriptionText.innerHTML = englishDescription;
         }
-        
+
+        // 立即替换视频，不等待加载
+        videoContainer.replaceChild(newVideo, teaserVideo);
+        // 更新视频引用
+        teaserVideo = newVideo;
+
+        // 播放新视频
+        newVideo.play();
+
         // 更新当前语言状态
         isEnglish = !isEnglish;
-        
-        // 重新加载并播放视频
-        teaserVideo.load();
-        teaserVideo.play();
-        
-        // 视频加载后重新启用按钮
-        teaserVideo.onloadeddata = function() {
-          languageToggle.disabled = false;
-        };
+
+        // 重新启用按钮
+        languageToggle.disabled = false;
+
+        // 重新预加载下一个视频
+        if (isEnglish) {
+          // 预加载中文视频
+          preloadChinese.load();
+        } else {
+          // 预加载英文视频
+          preloadEnglish.load();
+        }
       });
     });
   </script>
